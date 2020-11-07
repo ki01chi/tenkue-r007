@@ -1,5 +1,10 @@
 .p-contact {
-  &-top {
-    background-image: url(../../../image/contact_01.jpg);
+  &__top {
+    background-image: url("../../../image/contact_01.jpg");
+  }
+  &__container {
+    &__title {
+      background-color: red;
+    }
   }
 }
