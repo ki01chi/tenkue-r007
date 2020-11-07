@@ -1,4 +1,4 @@
-<header class="l-header" id="header">
+<header class="l-header">
 
   <div class="l-header__inner">
     <a href="#" class="l-header__logo"><img src="asset/image/logo_header.svg" alt="logo"></a>
@@ -12,7 +12,6 @@
       <span></span>
     </div>
   </div>
-
 
   <nav id="gloval-nav">
     <ul>
@@ -30,17 +29,15 @@
   <script>
     $(() => {
       $(function () {
-        $('#nav-toggle').on('click', function () {
-          if ($(this).hasClass('active')) {
-            $(this).removeClass('active');
-            $('.nav-toggle').addClass('close').removeClass('open');
-          } else {
-            $(this).addClass('active');
-            $('.nav-toggle').addClass('open').removeClass('close');
-          }
+        // $('#nav-toggle').on('click', function () {
+            // $('body').toggleClass('open');
+
+            $('#nav-toggle').on('click', function() {
+            $(this).toggleClass('active');
+            $('body').toggleClass('open');
+          });
         })
-      })
-    });
+      });
   </script>
 
 </header>
