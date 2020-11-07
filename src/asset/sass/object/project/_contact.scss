@@ -1,3 +1,5 @@
 .p-contact {
-  background-image: url(../../../image/contact_01.jpg);
+  &-top {
+    background-image: url(../../../image/contact_01.jpg);
+  }
 }
