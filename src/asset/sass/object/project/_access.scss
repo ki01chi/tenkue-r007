@@ -1,2 +1,107 @@
+@mixin h2 {
+    margin-bottom: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    @include font-size(24);
+    @include tab-layout() {
+        margin-bottom: 50px;
+    }
+    @include sp-layout() {
+        font-size: 6vw;
+        margin-bottom: 40px;
+    }
+}
+@mixin h2-after {
+    content: '';
+    width: 40px;
+    height: 2px;
+    background-color: $color-primary;
+    border-radius: 1px;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+}
+@mixin p-font {
+    @include tab-layout() {
+        font-size: 2vw;
+    }
+    @include sp-layout() {
+        font-size: 4vw;
+    }
+}
+
+
+
 .p-access {
+    margin-top: 80px;
+    padding-bottom: 150px;
+    &__header {
+        width: 100%;
+        height: 60vh;
+        background-image: url(../../asset/image/access_01.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    &__container {
+        max-width: 1024px;
+        margin: 0 auto;
+        padding: 75px 2.4%;
+        @include tab-layout() {
+            padding: 75px 3%;
+        }
+        @include sp-layout() {
+            padding: 75px 5%;
+        }
+        &__location {
+            text-align: center;
+            h2 {
+                @include h2
+            }
+            h2:after{
+                @include h2-after
+            }
+            &__image {
+                margin-bottom: 50px;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                @include sp-layout() {
+                    margin-bottom: 25px;
+                }
+                img {
+                    width: 24%;
+                }
+                img:nth-of-type(n + 5) {
+                    margin-top: 10px;
+                }
+            }
+            p {
+                margin-bottom: 80px;
+                @include p-font
+                @include sp-layout() {
+                    margin-bottom: 40px;
+                }
+            }
+        }
+        &__access {
+            h2 {
+                @include h2
+            }
+            h2:after{
+                @include h2-after
+            }
+            iframe {
+                width: 100%;
+                border: 0;
+            }
+            p {
+                @include p-font
+            }
+        }
+    }
 }
