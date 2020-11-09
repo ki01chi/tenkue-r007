@@ -83,7 +83,7 @@
           }
           @include sp-layout() {
             width: 100%;
-            @include font-size(23);
+            font-size: 4vw;;
           }
         }
         label {
