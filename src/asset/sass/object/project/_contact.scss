@@ -14,14 +14,18 @@
     margin: 0 auto;
     padding: 5rem 2.4% 0 2.4%;
     text-align: center;
-    @include sp-layout {
-      padding: 4rem 1.6rem 8rem 1.6rem;
+    @include sp-layout() {
+      padding: 4rem 5% 8rem 5%;
     }
     &__title {
-      font-size: 1.5rem;
       margin-bottom: 4rem;
       letter-spacing: 2px;
-      @include sp-layout {
+      @include font-size(24);
+      @include tab-layout() {
+        font-size: 3vw;
+        margin-bottom: 3rem;
+      }
+      @include sp-layout() {
         font-size: 6vw;
         margin-bottom: 2rem;
       }
@@ -35,19 +39,24 @@
       }
     }
     &__subTitle {
-      font-size: 1.1rem;
       margin-bottom: 2rem;
-      @include sp-layout {
+      @include font-size(18);
+      @include tab-layout() {
+        font-size: 2.25vw;
+      }
+      @include sp-layout() {
         margin-bottom: 1rem;
         font-size: 4.5vw;
       }
     }
     &__text {
-      font-size: 1rem;
-      margin-bottom: 1rem;
       margin-bottom: 4rem;
-      @include sp-layout {
-        @include font-size(23);
+      @include font-size(16);
+      @include tab-layout() {
+        font-size: 2vw;
+      }
+      @include sp-layout() {
+        font-size: 4vw;
         margin-bottom: 2rem;
       }
     }
@@ -56,7 +65,7 @@
         text-align: left;
         display: flex;
         margin-bottom: 2rem;
-        @include sp-layout {
+        @include sp-layout() {
           flex-direction: column;
           margin-bottom: 1.5rem;
         }
@@ -64,10 +73,13 @@
           width: 70%;
           background-color: $color-gold;
           border: none;
-          @include font-size(16vw);
-          @include sp-layout {
+          @include font-size(16);
+          @include tab-layout() {
+            font-size: 2vw;
+            padding: 1rem;
+          }
+          @include sp-layout() {
             width: 100%;
-            padding: 1.3rem;
             @include font-size(23);
           }
         }
@@ -77,7 +89,7 @@
           padding: 0.6rem;
           background-color: $color-primary;
           color: $color-light;
-          @include sp-layout {
+          @include sp-layout() {
             width: 100%;
             padding: 0.6rem;
             margin: 0;
@@ -85,33 +97,42 @@
         }
       }
       &__text {
-        font-size: 0.9rem;
         margin-bottom: 1.2rem;
-        @include sp-layout {
+        @include font-size(14);
+        @include tab-layout() {
+          font-size: 1.75vw;
+        }
+        @include sp-layout() {
           margin-bottom: 1rem;
-          @include font-size(20);
+          font-size: 3.5vw;
         }
       }
       &__privacy {
-        font-size: 0.9rem;
         margin-bottom: 2rem;
-        @include sp-layout {
+        @include font-size(14);
+        @include tab-layout() {
+          font-size: 1.75vw;
+        }
+        @include sp-layout() {
           margin-bottom: 2rem;
           label {
-            @include font-size(20);
+            font-size: 3.5vw;
           }
         }
       }
       &__button {
-        font-size: 1rem;
         background-color: transparent;
         border: 1px solid #222;
         width: 300px;
         padding: 1rem;
         margin: 0 auto 20px;
-        @include sp-layout {
+        @include font-size(16);
+        @include tab-layout() {
+          font-size: 2vw;
+        }
+        @include sp-layout() {
           padding: 1.3rem;
-          @include font-size(23);
+          font-size: 4vw;
         }
       }
     }
