@@ -1,49 +1,41 @@
-<header class="l-header">
+<header class="l-header" id="header">
+    <div class="l-header__inner">
+      <div class="l-header__logo">
+        <a class="l-header__logo" href="#">
+          <img src="../../asset/image/logo_header.svg" alt="logo">
+        </a>
+      </div>
 
-  <div class="l-header__inner">
-    <a href="#" class="l-header__logo"><img src="../../asset/image/logo_header.svg" alt="logo"></a>
-  </div>
-
-  <!-- ハンバーガーメニュー -->
-  <div id="nav-toggle">
-    <div>
-      <span></span>
-      <span></span>
-      <span></span>
+      <div class="hamburger-line">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <nav class="gloval-nav">
+        <ul class="gloval-nav__list">
+          <li><a href="/">TOP</a></li>
+          <li><a href="/room/">ROOM</a></li>
+          <li><a href="/areaguide/">AREA GUIDE</a></li>
+          <li><a href="/access/">ACCESS</a></li>
+          <li><a href="/contact/">CONTACT</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-
-  <nav id="gloval-nav">
-    <ul>
-      <li><a href="#">TOP</a></li>
-      <li><a href="#">ROOM</a></li>
-      <li><a href="#">AREA GUIDE</a></li>
-      <li><a href="#">ACCESS</a></li>
-      <li><a href="#">CONTACT</a></li>
-    </ul>
-  </nav>
-
-  <nav id="pc-nav">
-    <ul>
-      <li><a href="#">TOP</a></li>
-      <li><a href="#">ROOM</a></li>
-      <li><a href="#">AREA GUIDE</a></li>
-      <li><a href="#">ACCESS</a></li>
-      <li><a href="#">CONTACT</a></li>
-    </ul>
-  </nav>
+</header>
 
   <!-- jQuery読み込み -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-  <script>
-    $(() => {
-      $(function () {
-            $('#nav-toggle').on('click', function() {
-            $('body').toggleClass('open');
-          });
-        })
-      });
-  </script>
-
-</header>
+<script>
+  $('.hamburger-line').on('click',function(){
+    if ( $(this).hasClass('active') ) {
+      $(this).removeClass('active');
+      $('.gloval-nav').addClass('close').removeClass('open');
+    }
+    else {
+      $(this).addClass('active');
+      $('.gloval-nav').addClass('open').removeClass('close'); 
+    }
+  });
+</script>
