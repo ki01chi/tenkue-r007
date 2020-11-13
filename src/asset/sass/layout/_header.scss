@@ -17,8 +17,8 @@
     justify-content: space-between;
 
     &__logo {
-      width: 240px;
-      padding: 10px;
+        width: 240px;
+        padding: 10px;
     }
 
     // ハンバーガーメニュー
@@ -31,23 +31,21 @@
       }
     }
 
-
     .gloval-nav {
       @include tab-layout {
-        background-color: $color-default;
         position: fixed;
-        top: 0;
         left: 0;
+        top: 0;
         right: 0;
         bottom: 0;
-        z-index: 990;
-        align-items: center;
         display: none;
+        z-index: 990;
+        background-color: $color-default;
         width: 100%;
         height: 100%;
         flex-direction: column;
         justify-content: center;
-        // transition: opacity .6s ease, visibility .6s ease;
+        align-items: center;
       }
 
       .gloval-nav__list {
@@ -57,6 +55,7 @@
 
           a {
             color: $color-default;
+            text-decoration: none;
             padding: 10px;
             transition: 0.3s;
           }
@@ -76,78 +75,16 @@
             display: block;
             margin: 32px;
 
-            &:nth-child(1) {
-              transition: 1s;
-            }
-
-            &:nth-child(2) {
-              transition: 1.5s;
-            }
-
-            &:nth-child(3) {
-              transition: 2s;
-            }
-
-            &:nth-child(4) {
-              transition: 2.5s;
-            }
-
-            &:nth-child(5) {
-              transition: 3s;
-            }
-
             a {
-              font-size: 2vw;
               color: $color-light;
-
-              @include sp-layout {
-                font-size: 4vw;
-              }
             }
           }
-
         }
       }
     }
 
-    //navが表示される
     .gloval-nav.open {
       display: block;
-    }
-
-    //navが消える時のアニメーション
-    .gloval-nav.close {
-      @include tab-layout {
-
-        display: block;
-        opacity: 0;
-        transition: opacity .6s ease;
-
-        li {
-          opacity: 0;
-          transform: translateY(100px);
-
-          &:nth-child(1) {
-            transition: 3s;
-          }
-
-          &:nth-child(2) {
-            transition: 2.5s;
-          }
-
-          &:nth-child(3) {
-            transition: 2s;
-          }
-
-          &:nth-child(4) {
-            transition: 1.5s;
-          }
-
-          &:nth-child(5) {
-            transition: 1s;
-          }
-        }
-      }
     }
 
     /*ボタンの位置と動き*/
@@ -186,7 +123,6 @@
         width: 15px;
       }
 
-      //activeクラスがついた時のボタンの動き
       .hamburger-line.active span:nth-of-type(1) {
         background-color: $color-light;
         top: 15px;
