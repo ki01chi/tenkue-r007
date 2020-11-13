@@ -1,7 +1,7 @@
 <header class="l-header">
 
   <div class="l-header__inner">
-    <a href="#" class="l-header__logo"><img src="../../asset/image/logo_header.svg" alt="logo"></a>
+    <a href="#" class="l-header__logo"><img src="asset/image/logo_header.svg" alt="logo"></a>
   </div>
 
   <!-- ハンバーガーメニュー -->
@@ -23,23 +23,17 @@
     </ul>
   </nav>
 
-  <nav id="pc-nav">
-    <ul>
-      <li><a href="#">TOP</a></li>
-      <li><a href="#">ROOM</a></li>
-      <li><a href="#">AREA GUIDE</a></li>
-      <li><a href="#">ACCESS</a></li>
-      <li><a href="#">CONTACT</a></li>
-    </ul>
-  </nav>
-
   <!-- jQuery読み込み -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
   <script>
     $(() => {
       $(function () {
+        // $('#nav-toggle').on('click', function () {
+            // $('body').toggleClass('open');
+
             $('#nav-toggle').on('click', function() {
+            $(this).toggleClass('active');
             $('body').toggleClass('open');
           });
         })

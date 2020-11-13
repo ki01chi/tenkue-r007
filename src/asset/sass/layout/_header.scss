@@ -1,6 +1,3 @@
-#container {
-  z-index: 900;
-}
 .l-header {
   background-color: #fff;
   width: 100%;
@@ -25,19 +22,18 @@
   }
 }
 
-/*スマホ表示時のボタン位置*/
+// git スマホボタン
 #nav-toggle {
   position: fixed;
   top: 25px;
   right: 25px;
   height: 32px;
   cursor: pointer;
-  z-index: 1000;
+  
 > div {
   position: relative;
   width: 36px;
 }
-/*ボタン見た目*/
 span {
   width: 100%;
   height: 1px;
@@ -57,11 +53,8 @@ span {
     top: 28px;
   }
 }
-  @include pc-layout {
-    display: none;
-  }
 }
-/*openクラスがついた時のボタン挙動*/
+
 .open {
 #nav-toggle span {
   background: #fff;
@@ -81,7 +74,7 @@ span {
   }
 }
 }
-/*ボタン押したあとの画面*/
+
 #gloval-nav {
   background: #222;
   color: #fff;
@@ -100,62 +93,49 @@ span {
   @include font-size(15);
   opacity: 0;
   transition: opacity .6s ease, visibility .6s ease;
-
-  ul {
-    list-style: none;
-    
-    li {
-      opacity: 0;
-      transform: translateY(100px) scale(0.6) rotate(20deg);
-      transition: transform .6s ease, opacity .2s ease;
-      
-      &:nth-child(2) {
-        transition-delay: .15s;
-      }
-      &:nth-child(3) {
-        transition-delay: .3s;
-      }
-      &:nth-child(4) {
-        transition-delay: .45s;
-      }
-      &:nth-child(5) {
-        transition-delay: .6s;
-      }
-    }
-  }
-}
-
-/*PC表示時の画面*/
-#pc-nav {
-  position: fixed;
-  top: 25px;
-  right: 25px;
-  ul {
-    display: flex;
-    li {
-      margin-right: 20px;
-    }
-  }
-  @include tab-layout {
-    display: none;
-  }
-  @include sp-layout {
-    display: none;
-  }
 }
 a {
   display: block;
   color: #fff;
   text-decoration: none;
-  padding: 2rem 1rem;
-  transition: 0.4;
+  padding: 10px 0;
+  transition: color .6s ease;
   
   &:hover {
     color: #666;
-    
   }
 }
 
+ul {
+  list-style: none;
+  
+  li {
+    opacity: 0;
+    transform: translateY(100px) scale(0.6) rotate(20deg);
+    transition: transform .6s ease, opacity .2s ease;
+    
+    &:nth-child(2) {
+      transition-delay: .15s;
+    }
+    &:nth-child(3) {
+      transition-delay: .3s;
+    }
+    &:nth-child(4) {
+      transition-delay: .45s;
+    }
+    &:nth-child(5) {
+      transition-delay: .6s;
+    }
+  }
+}
+
+/* z-index */
+#nav-toggle {
+  z-index: 1000;
+}
+#container {
+  z-index: 900;
+}
 
 /* openしたときの表示 */
 .open {
