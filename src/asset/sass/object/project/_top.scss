@@ -1,2 +1,90 @@
+@mixin btn {
+  color: $color-light;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0px;
+  background-color: $color-primary;
+  margin-top: 40px;
+}
+
 .p-top {
+  &__header {
+    background-image: url(../../asset/image/mv.jpg);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__content {
+    max-width: 1024px;
+    padding: 60px 0;
+    margin: 0 auto;
+    padding-right: 2.4%;
+    padding-left: 2.4%;
+    @include sp-layout {
+      padding: 30px 0;
+    }
+
+    &__title {
+      text-align: center;
+      margin-bottom: 50px;
+      letter-spacing: 0.1em;
+    }
+
+    &__text {
+      text-align: center;
+      line-height: 2.5em;
+    }
+
+    .p-top__inner {
+      display: flex;
+      justify-content: space-between;
+      
+      
+      &__column2 {
+        width: 45%;
+
+        &__text {
+          text-align: center;
+          line-height: 2.5em;
+
+          h2 {
+            margin-bottom: 60px;
+          }
+        }
+
+        &__wrapImage {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 40px;
+
+          img {
+            width: 25%;
+          }
+        }
+
+        .p-top__btn {
+          @include btn;
+        }
+
+      }
+
+      &__column3 {
+        display: flex;
+
+        &__item {
+          justify-content: space-between;
+        }
+      }
+    }
+
+    .p-top__btn__room {
+      @include btn;
+      max-width: 400px;
+      margin-left: 312px;
+      margin-right: 312px;
+    }
+  }
 }
