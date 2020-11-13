@@ -1,81 +1,164 @@
 @mixin btn {
   color: $color-light;
-  display: inline-block;
+  display: block;
   text-align: center;
   width: 100%;
-  padding: 10px 0px;
+  padding: 0.6em 2em;
   background-color: $color-primary;
   margin-top: 40px;
+}
+
+@mixin text {
+  text-align: center;
+  line-height: 2.5em;
 }
 
 .p-top {
   &__header {
     background-image: url(../../asset/image/mv.jpg);
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
     background-size: cover;
     background-position: center;
   }
 
-  &__content {
+  &__container {
     max-width: 1024px;
-    padding: 60px 0;
+    padding: 60px 2.4%;
     margin: 0 auto;
-    padding-right: 2.4%;
-    padding-left: 2.4%;
+
     @include sp-layout {
-      padding: 30px 0;
+      padding: 30px 5%;
     }
 
     &__title {
       text-align: center;
       margin-bottom: 50px;
       letter-spacing: 0.1em;
+
+      @include tab-layout {
+        font-size: 4vw;
+      }
+
+      @include sp-layout {
+        font-size: 8vw;
+        margin-bottom: 30px;
+      }
     }
 
     &__text {
-      text-align: center;
-      line-height: 2.5em;
+      @include text;
+
+      @include tab-layout {
+        font-size: 2vw;
+      }
+
+      @include sp-layout {
+        font-size: 4vw;
+      }
+
     }
 
-    .p-top__inner {
+    &__inner {
       display: flex;
       justify-content: space-between;
-      
-      
+
+      @include sp-layout {
+        flex-wrap: wrap;
+        margin-bottom: 0px;
+      }
+
       &__column2 {
         width: 45%;
 
+        @include sp-layout {
+          width: 100%;
+          margin-bottom: 30px;
+        }
+
         &__text {
-          text-align: center;
-          line-height: 2.5em;
+          @include text;
+
+          @include tab-layout {
+            font-size: 2vw;
+          }
+
+          @include sp-layout {
+            font-size: 4vw;
+          }
 
           h2 {
             margin-bottom: 60px;
+
+            @include sp-layout {
+              margin-bottom: 30px;
+            }
           }
         }
 
         &__wrapImage {
           display: flex;
-          justify-content: space-between;
           margin-top: 40px;
+          justify-content: space-between;
 
           img {
-            width: 25%;
+            width: 23%;
           }
         }
 
         .p-top__btn {
           @include btn;
+
+          @include sp-layout {
+            margin-top: 20px;
+            font-size: 4vw;
+          }
         }
 
+        iframe {
+          width: 100%;
+        }
       }
 
-      &__column3 {
+      &__room {
         display: flex;
+        justify-content: space-between;
+
+        @include sp-layout {
+          width: 100%;
+          flex-wrap: wrap;
+        }
 
         &__item {
-          justify-content: space-between;
+          width: 30%;
+
+          @include sp-layout {
+            width: 100%;
+            margin-bottom: 30px;
+          }
+
+          h3 {
+            @include font-size(18);
+
+            @include tab-layout {
+              font-size: 2.25vw;
+            }
+
+            @include sp-layout {
+              font-size: 4.5vw;
+            }
+          }
+
+          p {
+            @include tab-layout {
+              font-size: 2vw;
+            }
+
+            @include sp-layout {
+              font-size: 4vw;
+            }
+          }
         }
       }
     }
@@ -83,8 +166,12 @@
     .p-top__btn__room {
       @include btn;
       max-width: 400px;
-      margin-left: 312px;
-      margin-right: 312px;
+      margin: 40px auto;
+
+      @include sp-layout {
+        font-size: 4vw;
+        margin-top: 0px;
+      }
     }
   }
 }
