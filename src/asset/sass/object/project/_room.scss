@@ -54,7 +54,7 @@
         }
         &__room {
             h2 {
-                @include h2
+                @include h2;
                 text-align: center;
                 &:after {
                     @include h2-after
