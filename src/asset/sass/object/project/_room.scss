@@ -1,3 +1,31 @@
+@mixin h2 {
+    margin-bottom: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    @include font-size(24);
+    @include tab-layout() {
+        font-size: 3vw;
+        margin-bottom: 50px;
+    }
+    @include sp-layout() {
+        font-size: 6vw;
+        margin-bottom: 40px;
+    }
+}
+@mixin h2-after {
+    content: '';
+    width: 40px;
+    height: 2px;
+    background-color: $color-primary;
+    border-radius: 1px;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+}
+
 .p-room {
     margin-top: 80px;
     padding-bottom: 150px;
@@ -30,7 +58,7 @@
                 @include h2;
                 text-align: center;
                 &:after {
-                    @include h2-after
+                    @include h2-after;
                 }
             }
             &__item {
@@ -67,7 +95,7 @@
                 display: flex;
                 flex-direction: row-reverse;
             }
-            h3{
+            h3 {
                 margin-bottom: 1rem;
                 @include tab-layout() {
                     font-size: 3vw;
