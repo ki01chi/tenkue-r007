@@ -1,2 +1,126 @@
+@mixin h2 {
+    margin-bottom: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    @include font-size(24);
+    @include tab-layout() {
+        font-size: 3vw;
+        margin-bottom: 50px;
+    }
+    @include sp-layout() {
+        font-size: 6vw;
+        margin-bottom: 40px;
+    }
+}
+@mixin h2-after {
+    content: '';
+    width: 40px;
+    height: 2px;
+    background-color: $color-primary;
+    border-radius: 1px;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+}
+
 .p-room {
+    margin-top: 80px;
+    padding-bottom: 150px;
+    @include tab-layout() {
+        padding-bottom: 80px;
+    }
+    @include sp-layout() {
+        padding-bottom: 75px;
+    }
+    &__header {
+        width: 100%;
+        height: 60vh;
+        background-image: url(../../asset/image/room_04.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    &__container {
+        max-width: 1024px;
+        margin: 0 auto;
+        padding: 75px 2.4%;
+        @include tab-layout() {
+            padding: 75px 3%;
+        }
+        @include sp-layout() {
+            padding: 75px 5%;
+        }
+        &__room {
+            h2 {
+                @include h2;
+                text-align: center;
+                &:after {
+                    @include h2-after;
+                }
+            }
+            &__item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 7rem;
+                @include tab-layout() {
+                    margin-bottom: 5.5rem;
+                }
+                @include sp-layout() {
+                    flex-wrap: wrap;
+                    margin-bottom: 3.5rem;
+                }
+                &__box {
+                    width: 47.5%;
+                    @include sp-layout() {
+                        width: 100%;
+                    }
+                    .p-num {
+                        font-size: 32px;
+                        font-weight: bold;
+                        margin-bottom: 0.5em;
+                        @include tab-layout() {
+                            font-size: 4vw;
+                        }
+                        @include sp-layout() {
+                            font-size: 8vw;
+                        }
+                    }
+                }
+            }
+            &__item-rev {
+                display: flex;
+                flex-direction: row-reverse;
+            }
+            h3 {
+                margin-bottom: 1rem;
+                @include tab-layout() {
+                    font-size: 3vw;
+                }
+                @include sp-layout() {
+                    font-size: 6vw;
+                }
+            }
+            .p-text {
+                margin-bottom: 1rem;
+                @include tab-layout() {
+                    font-size: 2vw;
+                }
+                @include sp-layout() {
+                    font-size: 4vw;
+                }
+            }
+            .p-img {
+                width: 50%;
+                margin-bottom: 50px;
+                @include sp-layout() {
+                    width: 100%;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
 }
