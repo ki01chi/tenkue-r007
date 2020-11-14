@@ -5,3 +5,12 @@
     crossorigin="anonymous"
 ></script>
 <script src="/asset/js/bundle.js"></script>
+<script>
+    $(() => {
+      $(function () {
+            $('#nav-toggle').on('click', function() {
+            $('body').toggleClass('open');
+          });
+        })
+      });
+</script>
