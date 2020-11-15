@@ -1,2 +1,143 @@
 .p-contact {
+  margin-top: 80px;
+  padding-bottom: 150px;
+  @include sp-layout() {
+    padding-bottom: 75px;
+  }
+  &__top {
+    width: 100%;
+    height: 60vh;
+    background-image: url("../image/contact_01.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &__container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 5rem 2.4% 0 2.4%;
+    text-align: center;
+    @include sp-layout() {
+      padding: 4rem 5% 0 5%;
+    }
+    &__title {
+      margin-bottom: 4rem;
+      letter-spacing: 2px;
+      @include font-size(24);
+      @include tab-layout() {
+        font-size: 3vw;
+        margin-bottom: 3rem;
+      }
+      @include sp-layout() {
+        font-size: 6vw;
+        margin-bottom: 2rem;
+      }
+      &::after {
+        content:"";
+        display:block;
+        width:40px;
+        height:2px;
+        background-color: $color-primary;
+        margin: 0 auto;
+      }
+    }
+    &__subTitle {
+      margin-bottom: 2rem;
+      @include font-size(18);
+      @include tab-layout() {
+        font-size: 2.25vw;
+      }
+      @include sp-layout() {
+        margin-bottom: 1rem;
+        font-size: 4.5vw;
+      }
+    }
+    &__text {
+      margin-bottom: 4rem;
+      @include font-size(16);
+      @include tab-layout() {
+        font-size: 2vw;
+      }
+      @include sp-layout() {
+        font-size: 4vw;
+        margin-bottom: 2rem;
+      }
+    }
+    &__form {
+      &__box {
+        text-align: left;
+        display: flex;
+        margin-bottom: 2rem;
+        @include sp-layout() {
+          flex-direction: column;
+          margin-bottom: 1.5rem;
+        }
+        &__input {
+          width: 70%;
+          background-color: $color-gold;
+          border: none;
+          @include font-size(16);
+          @include tab-layout() {
+            font-size: 2vw;
+            padding: 1rem;
+          }
+          @include sp-layout() {
+            width: 100%;
+            font-size: 4vw;;
+          }
+        }
+        label {
+          width: 25%;
+          margin: 0 auto;
+          padding: 0.6rem;
+          background-color: $color-primary;
+          color: $color-light;
+          @include sp-layout() {
+            width: 100%;
+            padding: 0.6rem;
+            margin: 0;
+          }
+        }
+      }
+      &__text {
+        margin-bottom: 1.2rem;
+        @include font-size(14);
+        @include tab-layout() {
+          font-size: 1.75vw;
+        }
+        @include sp-layout() {
+          margin-bottom: 1rem;
+          font-size: 3.5vw;
+        }
+      }
+      &__privacy {
+        margin-bottom: 2rem;
+        @include font-size(14);
+        @include tab-layout() {
+          font-size: 1.75vw;
+        }
+        @include sp-layout() {
+          margin-bottom: 2rem;
+          label {
+            font-size: 3.5vw;
+          }
+        }
+      }
+      &__button {
+        background-color: transparent;
+        border: 1px solid #222;
+        width: 300px;
+        padding: 1rem;
+        margin: 0 auto 20px;
+        @include font-size(16);
+        @include tab-layout() {
+          font-size: 2vw;
+        }
+        @include sp-layout() {
+          padding: 1.3rem;
+          font-size: 4vw;
+        }
+      }
+    }
+  }
 }
