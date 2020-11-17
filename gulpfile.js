@@ -202,3 +202,8 @@ exports.default = gulp.series(
     sync,
     watchFile
 );
+
+exports.build = gulp.series(
+    clean,
+    gulp.parallel(htmlMin, pugCompile, ejsCompile, sassCompile, imageMin, movie, favicon, pdf, jsBundle),
+);
